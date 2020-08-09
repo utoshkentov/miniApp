@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 
 import Counter from "./components/Counter/Counter";
-import {useHistory, Route, Switch} from "react-router-dom";
+import {useHistory, Route, Switch, Redirect} from "react-router-dom";
 import ItemAdd from "./components/ItemAdd/ItemAdd";
 import Header from "./components/Header/Header";
 import Posts from "./components/Posts/Posts";
@@ -39,6 +39,7 @@ const App = ({loading, error}) => {
                 <Route exact path='/login'>
                     <LoginPage/>
                 </Route>
+                <Redirect to='/login' />
             </Switch>
 
         </div>

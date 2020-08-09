@@ -1,0 +1,25 @@
+.counter{
+    width: 200px;
+    border: 1px solid #000000;
+    padding: 10px;
+    transform: translate(300%, 100%);
+}
+
+.counter h2 {
+    text-align: center;
+}
+
+.group-count{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.group-count button {
+    width: 30px;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.group-count button:hover{
+    background-color: #e64741;
+}

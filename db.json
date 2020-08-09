@@ -1,0 +1,24 @@
+{
+  "courses": [
+    {
+      "name": "Pure React",
+      "id": 1
+    },
+    {
+      "name": "Pure Redux",
+      "id": 2
+    },
+    {
+      "name": "asdas",
+      "id": 3
+    },
+    {
+      "name": "fsdfsd",
+      "id": 4
+    },
+    {
+      "name": "asdas",
+      "id": 5
+    }
+  ]
+}

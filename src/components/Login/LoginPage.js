@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import './Login.css'
 import {authLogin} from "../../redux/Auth/authActions";
 
-const LoginPage = ({loading, error, user, authLogin}) => {
+const LoginPage = ({loading, error, authLogin}) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 

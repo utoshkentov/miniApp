@@ -8,18 +8,18 @@ import Header from "./components/Header/Header";
 import Posts from "./components/Posts/Posts";
 import LoginPage from "./components/Login/LoginPage";
 
-const App = ({loading, error}) => {
+const App = ({loggedIn}) => {
     // const token = localStorage.getItem('token');
     const history = useHistory();
 
     useEffect(() => {
-        if (loading){
+        if (loggedIn){
             history.push('/')
         }
-        if (error){
+        else {
             history.push('/login')
         }
-    }, [history, loading, error]);
+    }, [history, loggedIn]);
 
     return (
         <div>
@@ -48,8 +48,6 @@ const App = ({loading, error}) => {
 
 const mapState = (state) => {
     return{
-        loading: state.auth.loading,
-        error: state.auth.error,
         loggedIn: state.auth.loggedIn,
     }
 };

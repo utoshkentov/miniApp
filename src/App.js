@@ -7,24 +7,31 @@ import ItemAdd from "./components/ItemAdd/ItemAdd";
 import Header from "./components/Header/Header";
 import Posts from "./components/Posts/Posts";
 import LoginPage from "./components/Login/LoginPage";
+import BlogList from "./components/Blog/BlogList";
+import {getBlogs} from "./redux/Blog/blogAction";
 
-const App = ({loggedIn}) => {
-    // const token = localStorage.getItem('token');
+const App = ({loggedIn, getBlogs}) => {
+    const token = localStorage.getItem('token');
     const history = useHistory();
 
     useEffect(() => {
-        if (loggedIn){
-            history.push('/')
+        if (loggedIn || token){
+            history.push('/');
+            getBlogs();
         }
         else {
-            history.push('/login')
+            history.push('/login');
         }
-    }, [history, loggedIn]);
+    }, [history, loggedIn, getBlogs, token]);
 
     return (
         <div>
             <Switch>
                 <Route exact path='/'>
+                    <Header />
+                    <BlogList/>
+                </Route>
+                <Route exact path='/counter'>
                     <Header />
                     <Counter/>
                 </Route>
@@ -52,4 +59,4 @@ const mapState = (state) => {
     }
 };
 
-export default connect(mapState)(App);
+export default connect(mapState, {getBlogs})(App);
